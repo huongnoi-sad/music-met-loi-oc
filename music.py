@@ -10,10 +10,10 @@ from dotenv import load_dotenv
 def run_bot():
     load_dotenv()
     TOKEN = os.getenv('TOKEN')
-    SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
-    SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+    SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_ID')
+    SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_SECRET')
 
-    sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET))
+    sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=SPOTIFY_ID, client_secret=SPOTIFY_SECRET))
 
     intents = discord.Intents.default()
     intents.message_content = True
